@@ -1,3 +1,5 @@
+# import json
+
 import os.path
 import sqlite3
 
@@ -30,6 +32,17 @@ def get_cart(username: str) -> list:
         cursor.execute('SELECT * FROM carts WHERE username = ?', (username,))
     else:
         return []
+
+    # cart = cursor.fetchall()
+    # temp_cart = []
+    # for row in cart:
+    #     temp_cart.append(row)
+    #
+    # final_cart = []
+    # for item in temp_cart:
+    #     final_cart.append(item)
+
+    # return final_cart
 
     cart = list(cursor.fetchall())
 

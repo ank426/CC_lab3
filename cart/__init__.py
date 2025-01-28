@@ -1,3 +1,5 @@
+# import json
+
 import products
 from cart import dao
 from products import Product
@@ -18,6 +20,17 @@ def get_cart(username: str) -> list:
     cart_details = dao.get_cart(username)
     if cart_details is None:
         return []
+
+    # contents = cart_detail['contents']
+    # evaluated_contents = eval(contents)
+    # for content in evaluated_contents:
+    #     items.append(content)
+    #
+    # i2 = []
+    # for i in items:
+    #     temp_product = products.get_product(i)
+    #     i2.append(temp_product)
+    # return i2
 
     items = []
     for cart_detail in cart_details:

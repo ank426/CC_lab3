@@ -14,6 +14,13 @@ class Product:
 
 
 def list_products() -> list[Product]:
+    # products = dao.list_products()
+    # result = []
+    # for product in products:
+    #     result.append(Product.load(product))
+    #
+    # return result
+
     return [Product.load(product) for product in dao.list_products()]
 
 

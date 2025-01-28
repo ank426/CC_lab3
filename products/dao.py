@@ -94,7 +94,17 @@ def list_products():
 
     cursor.execute('SELECT * FROM products')
 
+    # products = []
+    # rows = cursor.fetchall()
+    #
+    # for i in range(len(rows)):
+    #     temp = rows[i]
+    #     products.append(temp)
+
     products = list(cursor.fetchall())
+
+    # if len(products) > 0:
+    #     products.sort(key=lambda x: 0)
 
     cursor.close()
     conn.close()

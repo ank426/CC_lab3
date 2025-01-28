@@ -1,3 +1,5 @@
+# import json
+
 import flask
 import jwt
 from flask import render_template, request, redirect, url_for
@@ -54,6 +56,9 @@ def delete_cart_item():
 @app.route('/cart/<id>', methods=['POST'])
 def add_to_cart(id):
     token = request.cookies.get('token')
+    # payload = {
+    #     "id": id
+    # }
     if token is None:
         return redirect(url_for('login'))
     dec = jwt.decode(token, 'secret', algorithms=['HS256'])
